@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block title %}Chat App{% endblock %}</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .page-container {
+      background-color: #b1b1b1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100vh;
+    }
+
+    .content {
+      width: 80%;
+      max-width: 500px;
+      padding: 2rem;
+      max-height: 80vh;
+      background-color: #eef0f2;
+      border-radius: 1rem;
+      box-shadow: 0px 0px 1rem 0px rgba(0, 0, 0, 0.2);
+      display: grid;
+      grid-template-rows: fit-content auto fit-content;
+    }
+
+    .content::-webkit-scrollbar,
+    .chats-container::-webkit-scrollbar,
+    textarea::-webkit-scrollbar {
+      display: none;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    input[type="text"] {
+      outline: none;
+      border: none;
+      padding: 0.5rem 1rem;
+      background-color: #dadee1;
+      border-radius: 2rem;
+      width: 100%;
+      text-align: center;
+    }
+
+    button {
+      border: 0;
+      outline: 0;
+      padding: 0.5rem 0.75rem;
+      background-color: rgb(10, 32, 199);
+      border-radius: 2rem;
+      color: #ffffff;
+      font-size: 1.25rem;
+      font-weight: bold;
+      transition: 0.25s ease;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #353a41;
+    }
+
+    form {
+      margin-top: 1rem;
+      display: grid;
+      grid-template-columns: auto 2.5rem;
+      gap: 0.5rem;
+    }
+
+    textarea {
+      height: 5rem;
+      resize: none;
+      outline: none;
+      border: none;
+      padding: 0.5rem 1rem;
+      background-color: #dadee1;
+      border-radius: 0.5rem;
+      width: 100%;
+      overflow-y: scroll;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+
+    .single-message {
+      width: fit-content;
+      max-width: 60%;
+      clear: both;
+    }
+
+    .msg-body {
+      margin-top: 0.25rem;
+      padding: 0.5rem;
+      background-color: #ff7300;
+      color: #ffffff;
+      font-size: 1rem;
+      border-radius: 0.25rem;
+      word-wrap: break-word;
+    }
+
+    .sent {
+      float: right;
+    }
+
+    .sent > .msg-body {
+      background-color: #8c00ff;
+    }
+
+    .sender {
+      margin-top: 0.25rem;
+      font-size: 0.75rem;
+    }
+
+    .chats-container {
+      width: 100%;
+      height: 20rem;
+      overflow-y: scroll;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+
+    .logout-button {
+      background-color: #f44336;
+      border: none;
+      color: white;
+      padding: 0.4rem 1rem;
+      font-size: 0.9rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      font-weight: 600;
+      margin: 0;
+      justify-self: end;
+      width: fit-content;
+    }
+
+    .logout-button:hover {
+      background-color: #d32f2f;
+    }
+  </style>
+  {% block extra_head %}{% endblock %}
+</head>
+<body>
+  {% block content %}{% endblock %}
+  {% block scripts %}{% endblock %}
+</body>
+</html>
